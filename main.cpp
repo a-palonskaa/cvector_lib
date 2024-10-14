@@ -16,6 +16,8 @@ int main() {
     a = 98;
     vector_push_back_(h, &a);
     vector_erase_range(h, 3, 4, sizeof(int));
+    size_t capacity = vector_capacity_(h);
+    printf("meow\n\n%zu\n\n", capacity);
     int b = 0;
     vector_pop_back_(h, &b);
     printf("%d\n", b);
