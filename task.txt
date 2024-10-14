@@ -1,0 +1,56 @@
+new_vector
+
+vector_size
+vector_capacity
+vector_realloc
+
+type_size
+
+#define vector_erase(vec, pos, len)\
+	(_vector_erase((vector)vec, sizeof(*vec), pos, len))
+
+
+void* vector_new();
+// создаем полноценный вектор, но ретёрним только указатель на data^
+// делаем ф-цию get vector где по указателю на дэту получаем указатель на структурку веткора
+
+#define vector_type_(type)     /
+    typedef type data_t;       /
+
+typedef struct {
+    void* data;
+    size_t capacity;
+    size_t size;
+} vector;
+//====CTOR================================
+
+vec_ctor(void* vec, size_t capacity, size_t p_value);
+
+//========================================
+vec.push_back(value); — добавляет элемент value в конец вектора.
+vec.insert(pos, value); — вставляет элемент value в позицию pos.
+
+//========================================
+vec.pop_back(); — удаляет последний элемент вектора.
+vec.erase(pos); — удаляет элемент по итератору pos.
+vec.clear(); — удаляет все элементы из вектора.
+
+vec[index]; — доступ к элементу по индексу.
+vec.at(index); — аналогичный доступ с проверкой на выход за пределы.
+
+vec.size(); — возвращает текущее количество элементов.
+vec.capacity(); — возвращает количество элементов, которые могут быть сохранены без необходимости перераспределения памяти.
+vec.resize(new_size); — изменяет размер вектора.
+
+vec.begin(); и vec.end(); — возвращают итераторы на начало и конец вектора соответственно.
+
+
+
+
+#define cvector_push_back(vec, value)  \
+    do                                 \
+        (vec)[0] = (value);            \
+    while (0)
+
+#define vector_add(vec_addr, src_addr)              \
+	memcpy(vec_addr, src_addr, sizeof(*src_addr))
