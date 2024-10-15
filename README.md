@@ -1,4 +1,4 @@
-# Quadratic equation solver
+# Vector Library
 
 ## Overview
 The `cvector_lib` provides a dynamic array implementation in C. It offers functionality to insert, remove, and manipulate elements while automatically handling memory allocation and resizing.
@@ -82,7 +82,7 @@ To shrink the vector to fit its size, use:
 vector_shrink_to_fit_(my_vector);
 ```
 
-#Example of usage
+## Example of usage
 
 Here is a simple example of how to use the Vector Library:
 
